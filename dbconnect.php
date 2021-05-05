@@ -9,4 +9,8 @@
     if($conn->connect_error) {
         die("Connect failed: " . $conn->connect_error);
     }
+    session_start();
+    if(isset($_SESSION["UserID"])){
+        $sess_uid = $_SESSION["UserID"];
+    }
 ?>

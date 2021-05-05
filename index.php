@@ -1,5 +1,8 @@
 <?php
     require "dbconnect.php";
+    if($sess_uid == null){
+        header("location:login.php");
+    }
     $sql = "SELECT * FROM `user_tb`";
     $query = $conn->query($sql);
 ?>
@@ -30,3 +33,4 @@
 ?>
     </table>
     <a href="create.php">Create</a>
+    <a href="logout.php" style="float:right;">Logout</a>
